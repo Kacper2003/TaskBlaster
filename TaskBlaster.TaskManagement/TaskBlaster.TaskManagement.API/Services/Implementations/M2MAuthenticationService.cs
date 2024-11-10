@@ -16,7 +16,6 @@ public class M2MAuthenticationService : IM2MAuthenticationService
         _configuration = configuration;
     }
 
-    // Modular method that takes in a config key for the correct audience
     public async Task<string?> RetrieveAccessTokenAsync()
     {
         // Retrieve the relevant Auth0 configurations using the audienceKey
@@ -35,11 +34,13 @@ public class M2MAuthenticationService : IM2MAuthenticationService
             audience = audience
         };
 
+        // Create a request to the token endpoint
         var requestContent = new StringContent(JsonSerializer.Serialize(requestBody), System.Text.Encoding.UTF8, "application/json");
 
         var client = _httpClientFactory.CreateClient();
         var response = await client.PostAsync(tokenEndpoint, requestContent);
 
+        // Receive the token response
         var content = await response.Content.ReadAsStringAsync();
         var tokenResponse = JsonSerializer.Deserialize<TokenResponse>(content);
 

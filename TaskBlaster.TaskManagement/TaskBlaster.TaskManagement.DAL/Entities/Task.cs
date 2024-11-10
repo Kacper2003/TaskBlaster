@@ -3,23 +3,23 @@ namespace TaskBlaster.TaskManagement.DAL.Entities;
 public class Task
 {
     public int Id { get; set; }
-    public string Title { get; set; } = null!; // Not Null
+    public string Title { get; set; } = null!;
     public string? Description { get; set; }
-    public DateTime CreatedAt { get; set; } // Not Null
-    public DateTime? DueDate { get; set; } // Nullable
+    public DateTime CreatedAt { get; set; }
+    public DateTime? DueDate { get; set; }
     public bool IsArchived { get; set; } = false; // Property for archiving tasks
 
     // Foreign Keys
-    public int PriorityId { get; set; } // Not Null
+    public int PriorityId { get; set; }
     public Priority Priority { get; set; } = null!;
 
-    public int StatusId { get; set; } // Not Null
+    public int StatusId { get; set; }
     public Status Status { get; set; } = null!;
 
     public int? AssignedToId { get; set; } // Nullable
     public User? AssignedTo { get; set; } // Nullable navigation property
 
-    public int CreatedById { get; set; } // Not Null
+    public int CreatedById { get; set; }
     public User CreatedBy { get; set; } = null!;
 
     // Navigation properties

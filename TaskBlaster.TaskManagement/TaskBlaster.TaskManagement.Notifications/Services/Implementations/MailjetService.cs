@@ -44,9 +44,30 @@ public class MailjetService : IMailService
     }
 
 
-    public Task SendTemplateEmailAsync(string to, string subject, int templateId, Dictionary<string, object> variables)
+    public async Task SendTemplateEmailAsync(string to, string subject, int templateId, Dictionary<string, object> variables)
     {
-        // Implement template email sending using Mailjet's template feature if needed.
-        throw new NotImplementedException();
+        var client = new MailjetClient(_apiKey, _secretKey);
+
+        var request = new MailjetRequest
+        {
+            Resource = Send.Resource
+        }
+        .Property(Send.FromEmail, _senderEmail)
+        .Property(Send.FromName, "Task Blaster")
+        .Property(Send.Subject, subject)
+        .Property(Send.To, to)
+        .Property(Send.MjTemplateID, templateId)
+        .Property(Send.MjTemplateLanguage, true)
+        .Property(Send.Vars, variables);
+
+        var response = await client.PostAsync(request);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            Console.WriteLine($"Detailed Response: {response.GetData()}");
+
+            throw new Exception($"Failed to send templated email.");
+        }
     }
+
 }

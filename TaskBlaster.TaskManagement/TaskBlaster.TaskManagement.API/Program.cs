@@ -105,6 +105,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseGlobalExceptionHandler(); // * The implemented exception handler
+app.UseGlobalExceptionHandler(); // Exception handler
 
 app.Run();

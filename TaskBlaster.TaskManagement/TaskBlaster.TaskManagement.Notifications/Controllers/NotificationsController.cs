@@ -27,7 +27,6 @@ public class NotificationsController : ControllerBase
     {
         try
         {
-            // Here, you would call your email-sending service or logic.
             Console.WriteLine($"Sending basic email to {inputModel.To} with subject {inputModel.Subject} and body {inputModel.Content}");
 
             await _mailService.SendBasicEmailAsync(inputModel.To, inputModel.Subject, inputModel.Content, inputModel.IsHtml? EmailContentType.Html : EmailContentType.Text);
@@ -36,7 +35,6 @@ public class NotificationsController : ControllerBase
         }
         catch (Exception ex)
         {
-            // Log the exception (using a logging framework in a real scenario)
             Console.WriteLine($"Error sending email: {ex.Message}");
             
             // Return a failure response
@@ -50,8 +48,22 @@ public class NotificationsController : ControllerBase
     /// </summary>
     /// <param name="inputModel">An input model used to populate the templated email</param>
     [HttpPost("emails/template")]
-    public Task<ActionResult> SendTemplatedEmail([FromBody] TemplateEmailInputModel inputModel)
+    public async Task<ActionResult> SendTemplatedEmail([FromBody] TemplateEmailInputModel inputModel)
     {
-        throw new NotImplementedException();
+        try
+        {
+            Console.WriteLine($"Sending templated email to {inputModel.To} with subject {inputModel.Subject} and template ID {inputModel.TemplateId}");
+
+            await _mailService.SendTemplateEmailAsync(inputModel.To, inputModel.Subject, inputModel.TemplateId, inputModel.Variables);
+
+            return Ok(new { message = "Email sent successfully" });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending email: {ex.Message}");
+            
+            // Return a failure response
+            return StatusCode(500, new { error = "An error occurred while sending the email" });
+        }
     }
 }

@@ -72,7 +72,6 @@ public class NotificationService : INotificationService
             catch (Exception ex)
             {
                 Console.WriteLine($"Failed to send email to {task.AssignedToUser} for Task ID {task.Id}: {ex.Message}");
-                // Optionally, log the error using a logging framework
             }
         }
 

@@ -30,20 +30,19 @@ public class TaskManagementDbContext : DbContext
             .HasOne(t => t.AssignedTo)
             .WithMany(u => u.AssignedTasks)
             .HasForeignKey(t => t.AssignedToId)
-            .OnDelete(DeleteBehavior.Restrict); // Set delete behavior as needed
+            .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Entities.Task>()
             .HasOne(t => t.CreatedBy)
             .WithMany(u => u.CreatedTasks)
             .HasForeignKey(t => t.CreatedById)
-            .OnDelete(DeleteBehavior.Restrict); // Set delete behavior as needed
+            .OnDelete(DeleteBehavior.Restrict);
 
-        // Configure one-to-many relationship between Task and TaskNotification
         modelBuilder.Entity<TaskNotification>()
             .HasOne(tn => tn.Task)
             .WithMany(t => t.TaskNotifications)
             .HasForeignKey(tn => tn.TaskId)
-            .OnDelete(DeleteBehavior.Cascade); // Set delete behavior as needed
+            .OnDelete(DeleteBehavior.Cascade);
 
     }
 

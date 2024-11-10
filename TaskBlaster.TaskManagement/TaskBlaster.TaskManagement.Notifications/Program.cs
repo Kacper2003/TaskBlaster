@@ -26,7 +26,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register Application Services
+// Register services and repositories
 builder.Services.AddSingleton<IMailService, MailjetService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
@@ -51,10 +51,6 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 
@@ -68,7 +64,7 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
     Authorization = [new AllowAllAuthorizationFilter()]
 });
 
-// Schedule a dummy recurring job
+// Configure recurring job to send daily reports
 RecurringJob.AddOrUpdate<INotificationService>(
     "SendDailyReports",
     service => service.SendDailyReports(),

@@ -82,11 +82,11 @@ public class TaskRepository : ITaskRepository
             StatusId = taskInputModel.StatusId,
             AssignedToId = assignedToUser?.Id,
             CreatedById = user.Id,
-            TaskNotifications = new List<Entities.TaskNotification> { taskNotification } // Associate TaskNotification
+            TaskNotifications = new List<Entities.TaskNotification> { taskNotification } 
         };
         
         _dbContext.Tasks.Add(newTask);
-        await _dbContext.SaveChangesAsync(); // Await to ensure changes are saved
+        await _dbContext.SaveChangesAsync(); 
 
         return newTask.Id; // Directly return the ID after save completes
     }
@@ -179,7 +179,7 @@ public class TaskRepository : ITaskRepository
             Comments = task.Comments.Select(c => new CommentDto
             {
                 Id = c.Id,
-                Author = c.Author, // Direct property access if Author is not a navigation property
+                Author = c.Author,
                 ContentAsMarkdown = c.ContentAsMarkdown,
                 CreatedDate = c.CreatedDate
             }).ToList()
@@ -211,7 +211,7 @@ public class TaskRepository : ITaskRepository
         // - Or due yesterday and DayAfterNotificationSent is false
         var tasksToNotify = await _dbContext.Tasks
             .Include(t => t.TaskNotifications)
-            .Include(t => t.AssignedTo) // To get AssignedToUser's details
+            .Include(t => t.AssignedTo)
             .Where(t => 
                 t.DueDate.HasValue &&
                 t.AssignedToId != null &&
@@ -249,13 +249,11 @@ public class TaskRepository : ITaskRepository
         var task = await _dbContext.Tasks.FindAsync(taskId)
                     ?? throw new ResourceNotFoundException($"Task with id {taskId} not found");
 
-        // Check if the task is archived
         if (task.IsArchived)
         {
             throw new InvalidOperationException($"Task with id {taskId} is archived and cannot be modified.");
         }
 
-        // Check if the user is assigned to the task
         if (task.AssignedToId != userId)
         {
             throw new InvalidOperationException($"User with id {userId} is not assigned to task with id {taskId}.");
