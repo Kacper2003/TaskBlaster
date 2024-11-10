@@ -1,0 +1,11 @@
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/bin/Debug/net8.0/TaskBlaster.TaskManagement.Models.deps.json
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/bin/Debug/net8.0/TaskBlaster.TaskManagement.Models.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/bin/Debug/net8.0/TaskBlaster.TaskManagement.Models.pdb
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.AssemblyInfoInputs.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.AssemblyInfo.cs
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.csproj.CoreCompileInputs.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/refint/TaskBlaster.TaskManagement.Models.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/TaskBlaster.TaskManagement.Models.pdb
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Models/obj/Debug/net8.0/ref/TaskBlaster.TaskManagement.Models.dll

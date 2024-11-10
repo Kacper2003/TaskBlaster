@@ -1,0 +1,97 @@
+version: "3.8"
+
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: taskmanagementdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d taskmanagementdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hangfire-db:
+    image: postgres:latest
+    container_name: hangfire-db
+    environment:
+      POSTGRES_USER: hangfire_admin
+      POSTGRES_PASSWORD: hangfire_password
+      POSTGRES_DB: hangfiredb
+    volumes:
+      - hangfire_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hangfire_admin -d hangfiredb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  task-management-api:
+    build:
+      context: ./TaskBlaster.TaskManagement
+      dockerfile: Dockerfile.task-management-api
+    container_name: task-management-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ConnectionStrings__TaskManagementDb: "Host=postgres-db;Port=5432;Database=taskmanagementdb;Username=admin;Password=admin"
+      NotificationApi__BaseUrl: "http://task-management-notification-api:8080/api/notifications/"
+    networks:
+      - backend
+    ports:
+      - "5010:8080"
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+
+  task-management-notification-api:
+    build:
+      context: ./TaskBlaster.TaskManagement
+      dockerfile: Dockerfile.notification-api
+    container_name: task-management-notification-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ConnectionStrings__TaskManagementDb: "Host=postgres-db;Port=5432;Database=taskmanagementdb;Username=admin;Password=admin"
+      ConnectionStrings__HangfireDb: "Host=hangfire-db;Port=5432;Database=hangfiredb;Username=hangfire_admin;Password=hangfire_password"
+    networks:
+      - backend
+    ports:
+      - "5020:8080"
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+      hangfire-db:
+        condition: service_healthy
+
+  taskblaster-web:
+    build:
+      context: ./taskblaster-web
+      dockerfile: Dockerfile
+    container_name: taskblaster-web
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - nextjs_data:/app
+
+volumes:
+  postgres_data:
+  hangfire_data:
+  nextjs_data:
+
+networks:
+  backend:
+    driver: bridge

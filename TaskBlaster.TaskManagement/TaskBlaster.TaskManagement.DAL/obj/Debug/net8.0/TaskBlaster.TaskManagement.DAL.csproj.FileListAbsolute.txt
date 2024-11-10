@@ -1,0 +1,17 @@
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.DAL.deps.json
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.DAL.runtimeconfig.json
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.DAL.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.DAL.pdb
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.Models.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/bin/Debug/net8.0/TaskBlaster.TaskManagement.Models.pdb
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.csproj.AssemblyReference.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.AssemblyInfoInputs.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.AssemblyInfo.cs
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.csproj.CoreCompileInputs.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlas.5D0AF354.Up2Date
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/refint/TaskBlaster.TaskManagement.DAL.dll
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.pdb
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/TaskBlaster.TaskManagement.DAL.genruntimeconfig.cache
+/Users/kacper/Desktop/T-514-VEFT/Final assignment/TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.DAL/obj/Debug/net8.0/ref/TaskBlaster.TaskManagement.DAL.dll

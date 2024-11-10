@@ -1,0 +1,31 @@
+# Use the official .NET SDK as the build environment
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+WORKDIR /app
+
+# Copy the project files
+COPY TaskBlaster.TaskManagement.API/*.csproj ./TaskBlaster.TaskManagement.API/
+COPY TaskBlaster.TaskManagement.DAL/*.csproj ./TaskBlaster.TaskManagement.DAL/
+COPY TaskBlaster.TaskManagement.Models/*.csproj ./TaskBlaster.TaskManagement.Models/
+
+# Restore dependencies for the API project
+WORKDIR /app/TaskBlaster.TaskManagement.API
+RUN dotnet restore
+
+# Copy all source code
+WORKDIR /app
+COPY . ./
+
+# Build and publish the application
+WORKDIR /app/TaskBlaster.TaskManagement.API
+RUN dotnet publish -c Release -o /app/out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+# Expose the port
+EXPOSE 5000
+
+# Run the application
+ENTRYPOINT ["dotnet", "TaskBlaster.TaskManagement.API.dll"]
