@@ -1,0 +1,21 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "TaskManagementDb": "Host=localhost;Port=5432;Database=taskmanagementdb;Username=USERNAME;Password=PASSWORD"
+  },
+  "Auth0": {
+    "Domain": "https://YOUR-AUTH0-TENANT.us.auth0.com",
+    "Audience": "https://YOUR-TASK-MANAGEMENT-API-IDENTIFIER",
+    "ClientId": "YOUR-M2M-CLIENT-ID",
+    "ClientSecret": "YOUR-M2M-CLIENT-SECRET",
+    "NotificationApiAudience": "https://YOUR-NOTIFICATION-API-IDENTIFIER"
+  },
+  "NotificationApi": {
+    "BaseUrl": "http://localhost:5165/api/notifications/"
+  }
+}

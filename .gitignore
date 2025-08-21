@@ -1,0 +1,55 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Visual Studio
+.vs/
+
+# Rider / JetBrains
+.idea/
+
+# Logs
+*.log
+
+# Dependency caches
+*.cache
+*.dbmdl
+
+# Environment & config secrets
+.env
+appsettings.Development.json
+appsettings.Local.json
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Test results
+TestResult*/
+*.coverage
+*.coveragexml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Node 
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log

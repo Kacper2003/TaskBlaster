@@ -1,0 +1,28 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Information"
+    }
+  },
+
+  "ConnectionStrings": {
+    "TaskManagementDb": "Host=localhost;Port=5432;Database=taskmanagementdb;Username=USERNAME;Password=PASSWORD;",
+    "HangfireDb": "Host=localhost;Port=5433;Database=hangfiredb;Username=USERNAME;Password=PASSWORD;"
+  },
+
+  "Auth0": {
+    "Domain": "https://YOUR-AUTH0-TENANT.us.auth0.com",
+    "Audience": "https://YOUR-API-IDENTIFIER"
+  },
+
+  "Mailjet": {
+    "ApiKey": "YOUR-MAILJET-API-KEY",
+    "SecretKey": "YOUR-MAILJET-SECRET-KEY",
+    "SenderEmail": "YOUR-VERIFIED-SENDER@EMAIL.COM"
+  },
+
+  "NotificationApi": {
+    "BaseUrl": "http://localhost:5020"
+  }
+}
