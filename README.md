@@ -50,7 +50,7 @@ Projects:
 - Node.js (only if you run the frontend)
 
 #### Steps
-CODEBLOCK START
+```
 # Clone the repository
 git clone git@github.com:Kacper2003/TaskBlaster.git
 cd TaskBlaster
@@ -66,7 +66,7 @@ cp TaskBlaster.TaskManagement/TaskBlaster.TaskManagement.Notifications/appsettin
 
 # Run with Docker
 docker compose up --build
-CODEBLOCK END
+```
 
 - Task API → `http://localhost:5010`  
 - Notification API → `http://localhost:5020`
