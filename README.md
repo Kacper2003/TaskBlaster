@@ -38,8 +38,6 @@ Projects:
   - Swagger for each API at `/swagger`
   - Hangfire Dashboard (dev only) typically at `/hangfire` on the Notifications API
 
-*(Cloud/CI sections intentionally omitted.)*
-
 ---
 
 ### Setup
@@ -111,4 +109,4 @@ Local:
 ---
 
 ## License
-This project is part of my personal portfolio. Add a LICENSE file (e.g., MIT) if you want open-source terms to apply.
+This project is part of my personal portfolio.
